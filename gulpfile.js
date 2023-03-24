@@ -11,15 +11,15 @@ const browserSync = require('browser-sync').create();
 const paths = {
   html: {
     src: 'src/**/*.html',
-    dest: 'dist'
+    dest: 'docs'
   },
   styles: {
     src: 'src/scss/**/*.scss',
-    dest: 'dist/css'
+    dest: 'docs/css'
   },
   scripts: {
     src: 'src/js/**/*.js',
-    dest: 'dist/js'
+    dest: 'docs/js'
   }
 };
 
@@ -55,7 +55,7 @@ function scripts() {
 function watch() {
   browserSync.init({
     server: {
-      baseDir: './dist'
+      baseDir: './docs'
     }
   });
 
