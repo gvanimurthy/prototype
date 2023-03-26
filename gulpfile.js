@@ -7,8 +7,11 @@ const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
 const sourcemaps = require('gulp-sourcemaps');
 const browserSync = require('browser-sync').create();
+const include = require('gulp-include');
+const clean = require('gulp-clean');
 
 const paths = {
+  dest: 'docs',
   html: {
     src: 'src/**/*.html',
     dest: 'docs'
@@ -20,11 +23,20 @@ const paths = {
   scripts: {
     src: 'src/js/**/*.js',
     dest: 'docs/js'
+  },
+  includes: {
+    src: 'src/includes'
   }
 };
 
+gulp.task('clean', function () {
+  return gulp.src(paths.dest, {read: false})
+    .pipe(clean());
+});
+
 function html() {
   return gulp.src(paths.html.src)
+    .pipe(include())
     .pipe(gulp.dest(paths.html.dest))
     .pipe(browserSync.stream());
 }
