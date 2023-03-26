@@ -26,6 +26,10 @@ const paths = {
   },
   includes: {
     src: 'src/includes'
+  },
+  images: {
+    src: 'src/images/*.{png,jpg,jpeg,gif,svg}',
+    dest: 'docs/images'
   }
 };
 
@@ -64,6 +68,12 @@ function scripts() {
     .pipe(browserSync.stream());
 }
 
+function images() {
+  return gulp.src(paths.images.src)
+    .pipe(gulp.dest(paths.images.dest))
+    .pipe(browserSync.stream());
+}
+
 function watch() {
   browserSync.init({
     server: {
@@ -74,9 +84,11 @@ function watch() {
   gulp.watch(paths.html.src, html);
   gulp.watch(paths.styles.src, styles);
   gulp.watch(paths.scripts.src, scripts);
+  gulp.watch(paths.images.src, images);
 }
 
 exports.html = html;
 exports.styles = styles;
 exports.scripts = scripts;
+exports.images = images;
 exports.watch = watch;
