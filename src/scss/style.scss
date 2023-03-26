@@ -1,20 +1,44 @@
 // Define variables
-$primary-color: #2E8BC0;
-$secondary-color: #B1D4E0;
-$border-radius: 4px;
-$font-size: 16px;
+$primary-color: #0C2D48;
+$secondary-color: #b9d6f2; 
+$font-size: 12px;
+$success: #25a244;
+$danger: #c52233;
 
-
-// .main-sections {
-//   .accordion-button {
-//     background-color: $primary-color;
-//     color: #FFF;
-//   }
-// }
+body {
+  font-size: $font-size;
+}
+.accordion-body {
+  padding: 0.3rem;
+}
+.success-text { color: $success;}
+.danger-text { color: $danger;}
+.main-sections {
+  .accordion-button {
+    background-color: $primary-color;
+    color: #FFF;
+    &:after {
+      color: #FFF;
+    }
+    
+  }
+  .accordion-item {
+    .accordion-item {
+      .accordion-button {
+        background-color: $secondary-color;
+        color: #000;
+      }
+    }
+  }
+}
 
 .table {
   th, td {
     white-space: nowrap;
+    padding: 0.3rem;
+    span {
+      font-weight: bold;
+    }
   }
   
   th:first-child {
