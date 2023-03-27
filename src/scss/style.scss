@@ -8,6 +8,23 @@ $danger: #c52233;
 html {
   font-size: $font-size;
 }
+.navbar {
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.1);
+  padding: 1.2rem;
+  .navbar-brand {
+    color: #5b5b5b;
+  }
+}
+.profile {
+  margin: 1.2rem 0;
+  img {
+    max-width: 100px;
+    float: right;
+  }
+  .greetings {
+    font-size: 1.2rem;
+  }
+}
 .accordion-body {
   padding: 0.3rem;
 }
