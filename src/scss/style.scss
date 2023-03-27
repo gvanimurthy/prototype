@@ -37,8 +37,9 @@ html {
   th, td {
     white-space: nowrap;
     padding: 0.3rem;
-    span {
-      font-weight: bold;
+    font-weight: bold;
+    small {
+      font-weight: 300;
     }
     &:first-child {
       padding-right: 2rem;
