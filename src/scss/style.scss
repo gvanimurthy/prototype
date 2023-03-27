@@ -5,7 +5,7 @@ $font-size: 12px;
 $success: #25a244;
 $danger: #c52233;
 
-body {
+html {
   font-size: $font-size;
 }
 .accordion-body {
@@ -15,18 +15,19 @@ body {
 .danger-text { color: $danger;}
 .main-sections {
   .accordion-button {
-    background-color: $primary-color;
-    color: #FFF;
-    &:after {
-      color: #FFF;
+    // background-color: $primary-color;
+    // color: #FFF;
+    font-size: 1.4rem;
+    &:not(.collapsed) {
+      background-color: #eee;
     }
-    
   }
   .accordion-item {
     .accordion-item {
       .accordion-button {
-        background-color: $secondary-color;
-        color: #000;
+        // background-color: $secondary-color;
+        // color: #000;
+        font-size: 1.2rem;
       }
     }
   }
@@ -38,6 +39,9 @@ body {
     padding: 0.3rem;
     span {
       font-weight: bold;
+    }
+    &:first-child {
+      padding-right: 2rem;
     }
   }
   
